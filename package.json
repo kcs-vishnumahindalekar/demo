@@ -23,6 +23,7 @@
   "dependencies": {
     "@nestjs/apollo": "^10.1.0",
     "@nestjs/common": "^9.0.0",
+    "@nestjs/config": "github:nestjs/config",
     "@nestjs/core": "^9.0.0",
     "@nestjs/graphql": "^10.1.1",
     "@nestjs/mapped-types": "*",

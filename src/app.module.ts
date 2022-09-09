@@ -6,7 +6,8 @@ import { SequelizeModule } from '@nestjs/sequelize';
 import { ProductModule } from './product/product.module';
 
 @Module({
-  imports: [SequelizeModule.forRoot({
+  imports: [
+            SequelizeModule.forRoot({
               dialect: 'mysql',
               host: 'localhost',
               port: 3306,
