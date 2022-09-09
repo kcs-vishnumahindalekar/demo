@@ -31,6 +31,8 @@ export class UserService {
   }
 
   async update(id: number, updateUserInput: UpdateUserInput) {
+    console.log(id);
+    
     return `This action updates a #${id} user`;
   }
 
