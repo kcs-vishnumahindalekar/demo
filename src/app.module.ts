@@ -5,6 +5,7 @@ import { UserModule } from './user/user.module';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { ProductModule } from './product/product.module';
 
+
 @Module({
   imports: [
             SequelizeModule.forRoot({
