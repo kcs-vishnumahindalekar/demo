@@ -11,6 +11,7 @@ export class UserService {
   constructor(@InjectModel(User) private readonly userModel:typeof User){}
 
   async create(createUserInput: CreateUserInput) {
+    
     const user = await this.userModel.create({
       firstName:createUserInput.firstName,
       lastName:createUserInput.lastName,

@@ -4,20 +4,22 @@ import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { ProductModule } from './product/product.module';
-
+import { ConfigModule } from '@nestjs/config';
+import {DBconfig} from './database/config.js'
 
 @Module({
-  imports: [
+  imports: [ConfigModule.forRoot({isGlobal:true}),
             SequelizeModule.forRoot({
-              dialect: 'mysql',
-              host: 'localhost',
+              dialect: "mysql",
+              username: process.env.DB_USER,
+              password: process.env.DB_PASS,
+              database: process.env.DB_NAME,
+              host: process.env.DB_HOST,
               port: 3306,
-              username: 'root',
-              password: '',
-              database: 'test',
               autoLoadModels: true,
               synchronize: true,
-            }),UserModule, ProductModule],
+            }),
+            UserModule, ProductModule],
   controllers: [AppController],
   providers: [AppService],
 })
